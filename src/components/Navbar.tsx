@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, LogIn, Home, GraduationCap, Award } from 'lucide-react';
+import { Menu, X, LogIn, Home, GraduationCap, Award, Users2, FileText } from 'lucide-react';
 import { TabType } from '../types';
 
 interface NavbarProps {
@@ -42,6 +42,8 @@ export default function Navbar({ activeTab, onSelectTab }: NavbarProps) {
     { id: 'inicio', label: 'Inicio', icon: Home },
     { id: 'programas', label: 'Cursos y Técnicos', icon: GraduationCap },
     { id: 'beneficios', label: 'Beneficios y Becas', icon: Award },
+    { id: 'nosotros', label: 'Nosotros', icon: Users2 },
+    { id: 'inscripciones', label: 'Inscripciones', icon: FileText },
   ];
 
   return (

@@ -6,6 +6,8 @@ import AgreementsSection from './components/AgreementsSection';
 import AlliesMarquee from './components/AlliesMarquee';
 import ProgramCategoriesSection from './components/ProgramCategoriesSection';
 import BenefitsSection from './components/BenefitsSection';
+import AboutUsSection from './components/AboutUsSection';
+import AdmissionsSection from './components/AdmissionsSection';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import AdminModal from './components/AdminModal';
@@ -151,25 +153,6 @@ export default function App() {
             <ProgramCategoriesSection
               onSelectCategory={(type) => handleScrollToEnrollment(type)}
             />
-
-            {/* Tab Footer Navigation */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 border-t border-slate-200/80 pt-6 sm:pt-8 text-center sm:text-left">
-              <button
-                type="button"
-                onClick={() => handleTabChange('inicio')}
-                className="py-2.5 px-4 text-xs font-bold text-slate-600 hover:text-[#0035ab] transition-colors cursor-pointer min-h-[44px] flex items-center justify-center sm:justify-start"
-              >
-                ← Volver al Inicio
-              </button>
-              <button
-                type="button"
-                onClick={() => handleTabChange('beneficios')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#0035ab] text-white text-xs font-extrabold hover:bg-[#002477] transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer min-h-[48px]"
-              >
-                <span>Ver Siguiente: Beneficios y Becas ULEP</span>
-                <ArrowRight className="w-4 h-4 text-white" />
-              </button>
-            </div>
           </div>
         )}
 
@@ -179,25 +162,23 @@ export default function App() {
             <BenefitsSection
               onCtaClick={() => handleScrollToEnrollment()}
             />
+          </div>
+        )}
 
-            {/* Tab Footer Navigation */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 border-t border-slate-200/80 pt-6 sm:pt-8 text-center sm:text-left">
-              <button
-                type="button"
-                onClick={() => handleTabChange('programas')}
-                className="py-2.5 px-4 text-xs font-bold text-slate-600 hover:text-[#0035ab] transition-colors cursor-pointer min-h-[44px] flex items-center justify-center sm:justify-start"
-              >
-                ← Volver a Cursos y Técnicos
-              </button>
-              <button
-                type="button"
-                onClick={() => handleTabChange('inicio')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#0035ab] text-white text-xs font-extrabold hover:bg-[#002477] transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer min-h-[48px]"
-              >
-                <span>Volver al Inicio</span>
-                <ArrowRight className="w-4 h-4 text-white" />
-              </button>
-            </div>
+        {/* PESTAÑA 4: NOSOTROS */}
+        {activeTab === 'nosotros' && (
+          <div className="animate-in fade-in duration-300">
+            <AboutUsSection
+              onExplorePrograms={() => handleTabChange('programas')}
+              onExploreAdmissions={() => handleTabChange('inscripciones')}
+            />
+          </div>
+        )}
+
+        {/* PESTAÑA 5: INSCRIPCIONES */}
+        {activeTab === 'inscripciones' && (
+          <div className="animate-in fade-in duration-300">
+            <AdmissionsSection />
           </div>
         )}
       </main>

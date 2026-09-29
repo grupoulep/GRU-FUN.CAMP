@@ -85,6 +85,24 @@ export default function Footer({ onSelectTab, onOpenAdmin }: FooterProps) {
                   Beneficios y Becas
                 </a>
               </li>
+              <li>
+                <a
+                  href="#nosotros"
+                  onClick={(e) => handleTabClick(e, 'nosotros')}
+                  className="hover:text-[#0035ab] transition-colors cursor-pointer py-1 inline-block"
+                >
+                  Nosotros
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#inscripciones"
+                  onClick={(e) => handleTabClick(e, 'inscripciones')}
+                  className="hover:text-[#0035ab] transition-colors cursor-pointer py-1 inline-block"
+                >
+                  Inscripciones
+                </a>
+              </li>
               {/* Admin Button */}
               {onOpenAdmin && (
                 <li className="pt-1">

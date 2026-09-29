@@ -5,19 +5,44 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security Headers: Enforce HTTPS & Prevent Mixed Insecure Content -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- Automatic HTTPS Redirection for Public Production Deployments -->
+    <script>
+      (function() {
+        if (
+          window.location.protocol === 'http:' &&
+          window.location.hostname !== 'localhost' &&
+          window.location.hostname !== '127.0.0.1' &&
+          !window.location.hostname.endsWith('.internal')
+        ) {
+          window.location.replace('https://' + window.location.host + window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
     <!-- Theme color for mobile browser search/address bar -->
     <meta name="theme-color" content="#ffffff" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ffffff" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#0035ab" />
+    <meta name="msapplication-navbutton-color" content="#0035ab" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <title>Fundación ULEP - Pre-Aprobación Express</title>
+
+    <!-- SEO & Identity -->
+    <title>Fundación ULEP | Educación para el Trabajo, Cursos y Técnicos Laborales</title>
+    <meta name="description" content="Institución de Educación para el Trabajo y el Desarrollo Humano. Cursos cortos, programas técnicos laborales, becas institucionales y financiación directa sin bancos." />
+    <meta property="og:title" content="Fundación ULEP | Educación para el Trabajo" />
+    <meta property="og:description" content="Formación práctica por competencias, modalidades flexibles y facilidades de pago directo sin intermediarios bancarios." />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
